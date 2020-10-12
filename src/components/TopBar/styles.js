@@ -5,6 +5,7 @@ export const ContainerTopbar = styled.header`
   width: 100%;
   .containerTopbar {
     ul {
+      flex-wrap: wrap;
       margin-left: 20px;
       list-style: none;
       display: flex;

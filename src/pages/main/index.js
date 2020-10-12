@@ -2,9 +2,9 @@ import React, { Fragment } from "react";
 import imgCartorioDigital from "../../images/CartorioDigital.jpg";
 import { Container, Menu, Header, Body } from "./styles";
 import Grid from "@material-ui/core/Grid";
-import DigitalizarDoc from "../../pages/DigitalizarDoc/index";
+import PesquisarDocsDig from "../PesquisarDocsDig/index";
 import { Link } from "react-router-dom";
-import TopBar from "../../components/TopBar/index";
+import DigitalizarDoc from "../../pages/DigitalizarDoc/index";
 
 export default function Main() {
   return (
@@ -24,12 +24,14 @@ export default function Main() {
               <Body>
                 <ul>
                   <li>
-                    <Link to={`DigitalizarDoc`}>
+                    <Link to={`PageDigitalizar`}>
                       DIGITALIZAÇÃO DE DOCUMENTOS
                     </Link>
                   </li>
                   <li>
-                    <Link>ENCONTRAR DIGITALIZAÇÕES</Link>
+                    <Link to={`PesquisarDocsDig`}>
+                      ENCONTRAR DIGITALIZAÇÕES
+                    </Link>
                   </li>
                 </ul>
               </Body>

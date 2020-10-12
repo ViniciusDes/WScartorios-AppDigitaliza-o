@@ -4,10 +4,25 @@ import { TopBar } from "../../components/TopBar/index";
 export const ContainerDigitalizar = styled.div`
   width: 100%;
   height: 100%;
-  background: #7e7e7e;
+  background: #f6f6f6;
 
   /* background: red; */
+  #containerInputs {
+    display: flex;
+    flex-wrap: wrap;
 
+    justify-content: center;
+    /* width: 900px; */
+  }
+
+  #containerAll {
+    margin-top: 50px;
+  }
+  #bottomBar {
+    display: flex;
+
+    justify-content: center;
+  }
   .containerItens {
     margin-top: 50px;
     margin-left: 50px;
@@ -38,9 +53,9 @@ export const ContainerDigitalizar = styled.div`
     }
   }
 
-  ${TopBar} {
+  /* ${TopBar} {
     background: red !important;
-  }
+  } */
 `;
 
 export const Header = styled.div`

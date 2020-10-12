@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   html, body, .App, #root{
     height: 100%;
     background: #FFFFFF;
+    flex-wrap: wrap;
    
   }
   body{
