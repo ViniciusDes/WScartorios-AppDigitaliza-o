@@ -267,7 +267,7 @@ export default function DigitalizarDoc() {
               }}
             >
               Digitalizar
-            </Button>{" "}
+            </Button>
             <Button
               variant="contained"
               component="span"

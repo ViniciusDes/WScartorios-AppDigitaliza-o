@@ -13,20 +13,20 @@ const GlobalStyle = createGlobalStyle`
     font-family: "Noto Sans JP", sans-serif;
     font-weight: 300;
    }
-
-  html, body, .App, #root{
-    height: 100%;
-    background: #FFFFFF;
-    flex-wrap: wrap;
-   
-  }
-  body{
+   body{
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
     font-family: 'Noto Sans JP', sans-serif;
     font-weight: 300;
 
   }
+  html, body, .App, #root{
+    height: 100%;
+    background: #FFFFFF;
+    flex-wrap: wrap;
+   
+  }
+  
 
   /* background:  */
 `;
