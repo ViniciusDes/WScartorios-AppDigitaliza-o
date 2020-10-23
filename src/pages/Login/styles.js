@@ -11,15 +11,17 @@ export const Container = styled.div`
 `;
 
 export const FormLogin = styled.form`
+  flex-wrap: wrap;
   flex-direction: row;
   width: 700px;
-  height: 300px;
-  background: #b8f8a6;
+  /* height: 100%; */
+  /* background: #b8f8a6; */
+  /* min-height: 300px; */
   border-radius: 5px;
 
   background: linear-gradient(to bottom, #c8d8ed 0%, #ffffff 100%), transparent;
-  background-size: 100% 300px, 100%;
-  background-repeat: repeat-y;
+  background-size: 100% 100%;
+  background-repeat: repeat-x;
   /* background-position: top; */
   /* justify-content: center; */
 
@@ -29,7 +31,7 @@ export const FormLogin = styled.form`
   }
   .gridContainer {
     background: transparent;
-
+    min-height: 300px;
     #containerCompany {
       align-items: center;
 
@@ -37,13 +39,13 @@ export const FormLogin = styled.form`
         height: 250px;
         width: 180px;
         background: transparent;
-        margin-left: 55px;
+        /* margin-left: 55px; */
         /* align-self: center; */
       }
     }
   }
   #containerLogin {
-    padding-right: 70px;
+    /* padding-right: 70px; */
   }
 
   .gridItem {

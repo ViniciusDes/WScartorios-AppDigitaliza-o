@@ -75,7 +75,7 @@ export default function Login() {
           <Grid
             item
             xs={12}
-            sm={5}
+            sm={6}
             className="gridItem"
             id="containerCompany"
             style={{ flexDirection: "column" }}
@@ -84,13 +84,13 @@ export default function Login() {
             <img src={DivisorPng} />
           </Grid>
 
-          <Grid item xs={12} sm={2} className="gridItem">
+          {/* <Grid item xs={12} sm={2} className="gridItem">
             <div id="imgFake">
               <img src={DivisorPng} />
             </div>
-          </Grid>
+          </Grid> */}
 
-          <Grid item xs={12} sm={5} className="gridItem" id="containerLogin">
+          <Grid item xs={12} sm={6} className="gridItem" id="containerLogin">
             <div className="itemsLogin">
               <div className="inputContainer">
                 <p>Entre com seu email</p>
