@@ -13,17 +13,14 @@ export const Container = styled.div`
 export const FormLogin = styled.form`
   flex-wrap: wrap;
   flex-direction: row;
-  width: 700px;
-  /* height: 100%; */
-  /* background: #b8f8a6; */
-  /* min-height: 300px; */
+  width: 665px;
+
+  margin: 10px;
   border-radius: 5px;
 
   background: linear-gradient(to bottom, #c8d8ed 0%, #ffffff 100%), transparent;
   background-size: 100% 100%;
   background-repeat: repeat-x;
-  /* background-position: top; */
-  /* justify-content: center; */
 
   span,
   svg {
@@ -32,6 +29,7 @@ export const FormLogin = styled.form`
   .gridContainer {
     background: transparent;
     min-height: 300px;
+    max-width: 650px;
     #containerCompany {
       align-items: center;
 
@@ -39,6 +37,7 @@ export const FormLogin = styled.form`
         height: 250px;
         width: 180px;
         background: transparent;
+        margin-top: 20px;
         /* margin-left: 55px; */
         /* align-self: center; */
       }
@@ -46,6 +45,7 @@ export const FormLogin = styled.form`
   }
   #containerLogin {
     /* padding-right: 70px; */
+    margin: 10px 0 10px 0;
   }
 
   .gridItem {
