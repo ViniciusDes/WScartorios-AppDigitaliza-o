@@ -9,11 +9,12 @@ export const Container = styled.div`
 
   .gridContainer {
     height: 100%;
+    width: 100%;
     display: flex;
   }
 
   .gridItem {
-    height: 100%;
+    /* height: 100%; */
   }
   img {
     height: 100%;
@@ -21,11 +22,16 @@ export const Container = styled.div`
   }
 
   @media (max-width: 450px) {
+    background: #000000;
     .gridItem {
       img {
         height: 100%;
         width: 100%;
       }
+    }
+
+    .menuItems {
+      width: 90%;
     }
   }
 `;

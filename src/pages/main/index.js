@@ -16,7 +16,7 @@ export default function Main() {
 
         <Grid item xs={12} sm={4} className="gridItem">
           <div className="containerItens">
-            <Menu id="te">
+            <Menu className="menuItems">
               <Header>
                 <h1>Cartório Digital WS</h1>
               </Header>
