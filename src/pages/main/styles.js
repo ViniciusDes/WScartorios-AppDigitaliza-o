@@ -5,6 +5,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   background: #ffffff;
   height: 100%;
+  /* position: relative; */
 
   .gridContainer {
     height: 100%;
@@ -17,6 +18,15 @@ export const Container = styled.div`
   img {
     height: 100%;
     width: 100%;
+  }
+
+  @media (max-width: 450px) {
+    .gridItem {
+      img {
+        height: 100%;
+        width: 100%;
+      }
+    }
   }
 `;
 
