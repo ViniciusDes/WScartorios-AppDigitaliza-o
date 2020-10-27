@@ -97,7 +97,7 @@ export default function Login() {
                 <Input
                   className="inputs"
                   id="input-with-icon-adornment"
-                  placeholder="E-mail"
+                  placeholder="Email"
                   startAdornment={
                     <InputAdornment position="start">
                       <AccountCircle />
