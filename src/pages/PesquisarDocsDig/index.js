@@ -96,7 +96,6 @@ export default function PesquisarDocsDig() {
                       />
                     </div>
                   </Grid>
-
                   <Grid item xs={12} sm={12} className="gridItem">
                     <div className="inputItem">
                       <TextField

@@ -4,7 +4,7 @@ import { TopBar } from "../../components/TopBar/index";
 export const ContainerDigitalizar = styled.div`
   width: 100%;
   height: 100%;
-  background: #f6f6f6;
+  background: linear-gradient(to bottom, #c8d8ed 0%, #ffffff 100%), transparent;
 
   /* background: red; */
   #containerInputs {
@@ -12,7 +12,7 @@ export const ContainerDigitalizar = styled.div`
     flex-wrap: wrap;
 
     justify-content: center;
-    /* width: 900px; */
+    margin-bottom: 20px;
   }
 
   #containerAll {
@@ -27,8 +27,8 @@ export const ContainerDigitalizar = styled.div`
     margin-top: 50px;
     margin-left: 50px;
     margin-right: 50px;
-    height: 100%;
     background: #ffffff;
+    border-radius: 8px;
 
     .inputsSearch {
       display: flex;
@@ -53,9 +53,15 @@ export const ContainerDigitalizar = styled.div`
     }
   }
 
-  /* ${TopBar} {
-    background: red !important;
-  } */
+  @media (max-width: 450px) {
+    height: auto;
+
+    .containerItens {
+      margin-top: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
 `;
 
 export const Header = styled.div`

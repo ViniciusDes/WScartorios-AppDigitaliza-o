@@ -11,10 +11,9 @@ import IconButton from "@material-ui/core/IconButton";
 import Visibility from "@material-ui/icons/Visibility";
 import VisibilityOff from "@material-ui/icons/VisibilityOff";
 import Button from "@material-ui/core/Button";
-import DivisorPng from "../../images/logoOK.png";
+import DivisorPng from "../../images/WSLOGOdef.png";
 import { Link } from "react-router-dom";
 import TopBar from "../../components/TopBar/index";
-// import a from "../../../public/images/dvisor.png";
 
 const useStyles = makeStyles((theme) => ({
   back: {

@@ -49,7 +49,7 @@ export default function CustomizedTables() {
   const classes = useStyles();
 
   return (
-    <ContainerGrid>
+    <ContainerGrid className="containerGrid">
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="customized table">
           <TableHead>

@@ -34,8 +34,8 @@ export const FormLogin = styled.form`
       align-items: center;
 
       img {
-        height: 215px;
-        width: 140px;
+        height: 205px;
+        width: 205px;
         background: transparent;
         margin-top: 20px;
         /* margin-left: 55px; */

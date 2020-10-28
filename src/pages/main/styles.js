@@ -3,18 +3,19 @@ import styled from "styled-components";
 // import InputLabel from "@material-ui/core/InputLabel";
 
 export const Container = styled.div`
-  background: #ffffff;
+  background: linear-gradient(to bottom, #c8d8ed 0%, #ffffff 100%), transparent;
   height: 100%;
   /* position: relative; */
 
   .gridContainer {
+    margin: 0;
     height: 100%;
     width: 100%;
     display: flex;
   }
 
   .gridItem {
-    /* height: 100%; */
+    padding: 0 !important;
   }
   img {
     height: 100%;
@@ -33,16 +34,25 @@ export const Container = styled.div`
     .menuItems {
       width: 90%;
     }
+
+    .containerItens {
+      display: flex;
+      justify-content: center;
+
+      padding-top: 40px;
+
+      h1 {
+        color: #ffffff;
+      }
+    }
   }
 `;
 
 export const Menu = styled.form`
   border: 2px solid #eceeee;
   border-radius: 5px;
-  width: 480px;
-  height: 400px;
-
-  margin: 20px 0 0 20px;
+  width: auto;
+  margin: 10px;
 
   height: auto;
   padding-bottom: 20px;

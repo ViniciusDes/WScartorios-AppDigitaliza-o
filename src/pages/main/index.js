@@ -1,15 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import imgCartorioDigital from "../../images/CartorioDigital.jpg";
 import { Container, Menu, Header, Body } from "./styles";
 import Grid from "@material-ui/core/Grid";
-import PesquisarDocsDig from "../PesquisarDocsDig/index";
 import { Link } from "react-router-dom";
-import DigitalizarDoc from "../../pages/DigitalizarDoc/index";
 
 export default function Main() {
   return (
     <Container>
-      <Grid container spacing={2} className="gridContainer">
+      <Grid container spacing={2} className="gridContainer" id="teste">
         <Grid item xs={12} sm={8} className="gridItem">
           <img src={imgCartorioDigital} />
         </Grid>
