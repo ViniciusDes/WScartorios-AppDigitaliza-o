@@ -22,7 +22,6 @@ const GlobalStyle = createGlobalStyle`
   }
   html, body, .App, #root{
     height: 100%;
-    background: #000000;
     flex-wrap: wrap;
    
   }
