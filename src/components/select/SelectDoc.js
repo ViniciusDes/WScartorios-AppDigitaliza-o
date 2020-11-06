@@ -1,89 +1,71 @@
-import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
-import Input from "@material-ui/core/Input";
+import React, { useEffect, useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import Button from "@material-ui/core/Button";
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
-
-const typesDocument = [
-  "Certidão de casamento",
-  "Reconhecimento de firma",
-  "Certidão de Nascimento",
-  "Preenchimento de Recibo",
-  "Atestado de óbito",
-];
 const useStyles = makeStyles((theme) => ({
+  button: {
+    display: "block",
+    marginTop: theme.spacing(2),
+  },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 120,
-    maxWidth: 300,
-  },
-  chips: {
-    display: "flex",
-    flexWrap: "wrap",
-  },
-  chip: {
-    margin: 2,
-  },
-  noLabel: {
-    marginTop: theme.spacing(3),
   },
 }));
-function getStyles(typesDocument, personName, theme) {
-  return {
-    fontWeight:
-      personName.indexOf(typesDocument) === -1
-        ? theme.typography.fontWeightRegular
-        : theme.typography.fontWeightMedium,
-  };
-}
+const typesSubGrupo = ["Livro", "Processo"];
 
-export function SelectDocs() {
+export function SelectDocs(props) {
   const classes = useStyles();
-  const theme = useTheme();
-  const [personName, setPersonName] = React.useState([]);
+  const [age, setAge] = useState("");
+  const [open, setOpen] = useState(false);
 
   const handleChange = (event) => {
-    setPersonName(event.target.value);
-    console.log(event.target.value);
+    setAge(event.target.value);
+    props.setType();
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+
+    if (props.item === "1") {
+      props.setTypeFalse();
+    }
+  };
+
+  const handleOpen = () => {
+    setOpen(true);
   };
 
   return (
-    <>
-      <InputLabel id="demo-mutiple-name-label" style={{ marginLeft: "15px" }}>
-        Selecione o arquivo
-      </InputLabel>
-      <Select
-        labelId="demo-mutiple-name-label"
-        id="demo-mutiple-name"
-        multiple
-        value={personName}
-        onChange={handleChange}
-        input={<Input />}
-        MenuProps={MenuProps}
-        style={{ width: "90px", marginLeft: "15px" }}
-      >
-        {typesDocument.map((name) => (
-          <MenuItem
-            key={name}
-            value={name}
-            style={getStyles(name, personName, theme)}
-          >
-            {name}
-          </MenuItem>
-        ))}
-      </Select>
-    </>
+    <div>
+      <Button className={classes.button} onClick={handleOpen}>
+        Selecione:
+      </Button>
+      <FormControl className={classes.formControl}>
+        {/* <InputLabel id="demo-controlled-open-select-label">t</InputLabel> */}
+        <Select
+          labelId="demo-controlled-open-select-label"
+          id="demo-controlled-open-select"
+          open={open}
+          onClose={handleClose}
+          onOpen={handleOpen}
+          value={age}
+          onChange={handleChange}
+        >
+          {/* <MenuItem value="">
+            <em>None</em>
+          </MenuItem> */}
+          {props.typesDocument.map((typeDoc, index) => (
+            <MenuItem value={index} key={index}>
+              {typeDoc}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </div>
   );
 }
