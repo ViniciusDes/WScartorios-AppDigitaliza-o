@@ -146,6 +146,68 @@ const typesSubGrupoOrgInternaOrgInt = [
   "Certificação notarial",
 ];
 
+const typesSubGrupoOrgInternContRelatorio = [
+  "Correspondência - relatório",
+  "Agendamento casamento civil - horários - relatório",
+  "Ocorrência guardas - relatório",
+  "Protocolo CRI - despachante - relatório",
+  "Retificação - relatório",
+  "Controle de visita mensal",
+  "Controle de visitação mensal",
+  "Controle visitação casamento",
+  "Livros - relatório",
+  "Suposto pai - relatorio",
+];
+
+const typesSubGrupoNotasProces = [
+  "Arquivo morto",
+  "Divórcio - processo notas",
+  "Inventário - processo notas",
+  "Restabelecimento da sociedade conjugal (reconciliação) - processo notas",
+  "Separação - processo notas",
+  "Sobrepartilha - processo notas",
+  "Testamento - processo notas",
+];
+
+const typesSubGrupoDepPessoal = ["Pessoal/financeiro", "Estatística"];
+
+const typesSubGrupoDepPessoalFinanceiro = [
+  "Avaliação de conhecimento",
+  "Certidão negativa",
+  "Comunicação propostos",
+  "Deposito prévio",
+  "Corresponfência - DP",
+  "Diário auxiliar",
+  "Folha de pagamento",
+  "Ipasgo",
+  "Nomeação prepostos",
+  "Pessoas irregulares receita e despesa - fotocópia",
+  "Registro empregados",
+  "Taxa judiciária",
+  "Terceirização guarda arquivo",
+  "Tributos",
+  "PPRA/PCMSO",
+  "Inspesão da corregedoria",
+];
+
+const typesSubGrupoDepPessoalEstatistica = [
+  "CENSEC",
+  "CNJ",
+  "Comunicação baixa documentos - CGJ-GO",
+  "CRC - SIRC",
+  "DOI",
+  "IBGE - Casamento homoafetivo",
+  "IBGE - Civil e notas",
+  "Ministro exercito",
+  "Pai presente - nascimento sem pai",
+  "Policia federal",
+  "SEFAZ",
+  "TRE",
+  "SINTER",
+  "SSP",
+  "COAF",
+];
+
 export default function DigitalizarDoc() {
   const [types, setTypes] = useState(false);
   const [types2, setTypes2] = useState(false);
@@ -154,6 +216,8 @@ export default function DigitalizarDoc() {
   const [age, setAge] = useState("");
   const [age2, setAge2] = useState("");
   const [age3, setAge3] = useState("");
+
+  const [itemOldSelected, setitemOldSelected] = useState();
 
   const [listOptions2, setListOptions2] = useState([]);
   const [listOptions3, setListOptions3] = useState([]);
@@ -166,9 +230,13 @@ export default function DigitalizarDoc() {
     setAge(event.target.value);
     const index = event.target.value;
     const itemSelecionado = typesDocument[index];
+    setitemOldSelected(itemSelecionado);
 
     switch (itemSelecionado) {
       case "Civil":
+        setListOptions2(typesSubGrupo);
+        break;
+      case "Notas":
         setListOptions2(typesSubGrupo);
         break;
 
@@ -179,6 +247,10 @@ export default function DigitalizarDoc() {
       case "Organização interna":
         setListOptions2(typesSubGrupoOrgInterna);
         break;
+
+      case "Departamento Pessoal":
+        setListOptions2(typesSubGrupoDepPessoal);
+        break;
     }
     setTypes2(true);
   };
@@ -186,19 +258,44 @@ export default function DigitalizarDoc() {
     setAge2(event.target.value);
 
     const index = event.target.value;
-    const itemSelecionado = typesSubGrupo[index];
+    const itemSelecionado = listOptions2[index];
+    // const itemSelecionado = typesSubGrupo[index];
 
     switch (itemSelecionado) {
       case "Livro":
-        setListOptions3(typesSubGrupoIndexCivilLivro);
+        if (itemOldSelected == "Notas") {
+          setListOptions3(typesSubGrupoIndexNotasLivro);
+        } else {
+          setListOptions3(typesSubGrupoIndexCivilLivro);
+        }
         break;
 
       case "Processo":
-        setListOptions3(typesSubGrupoRecFirma);
+        if (itemOldSelected == "Notas") {
+          setListOptions3(typesSubGrupoNotasProces);
+        } else {
+          setListOptions3(typesSubGrupoIndexCivilLivro);
+        }
+        break;
+
+      case "Ficha":
+        setListOptions3(typesSubGrupoRecFirmaFicha);
         break;
 
       case "Organização interna":
-        setListOptions2(typesSubGrupoOrgInterna);
+        setListOptions3(typesSubGrupoOrgInternaOrgInt);
+        break;
+
+      case "Controle/Relatório":
+        setListOptions3(typesSubGrupoOrgInternContRelatorio);
+        break;
+
+      case "Pessoal/financeiro":
+        setListOptions3(typesSubGrupoDepPessoalFinanceiro);
+        break;
+
+      case "Estatística":
+        setListOptions3(typesSubGrupoDepPessoalEstatistica);
         break;
     }
     setTypes3(true);
