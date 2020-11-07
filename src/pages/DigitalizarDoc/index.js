@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   },
   btns: {
     background: "#050505",
-    // marginLeft: "10px",
+    marginLeft: "10px",
     color: "#FFFFFF",
   },
   containerInputs: {
@@ -222,6 +222,7 @@ export default function DigitalizarDoc() {
   const [listOptions2, setListOptions2] = useState([]);
   const [listOptions3, setListOptions3] = useState([]);
 
+  const [openInputs, setOpenInputs] = useState(false);
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
@@ -302,6 +303,8 @@ export default function DigitalizarDoc() {
   };
   const handleChange3 = (event) => {
     setAge3(event.target.value);
+    // document.removeChild(select2);
+    setOpenInputs(true);
     setTypes3(true);
   };
 
@@ -339,7 +342,7 @@ export default function DigitalizarDoc() {
           onOpen={handleOpen2}
           value={age2}
           onChange={handleChange2}
-          style={{ width: "300px", margin: "10px" }}
+          style={{ width: "300px", margin: "10px 10px 10px 0px" }}
         >
           {listOptions2.map((typeDoc, index) => (
             <MenuItem value={index} key={index}>
@@ -355,13 +358,13 @@ export default function DigitalizarDoc() {
       <>
         <Select
           // labelId="demo-controlled-open-select-label"
-          // id="demo-controlled-open-select"
+
           open={open3}
           onClose={handleClose3}
           onOpen={handleOpen3}
           value={age3}
           onChange={handleChange3}
-          style={{ width: "300px", margin: "10px" }}
+          style={{ width: "300px", margin: "10px 10px 10px 0px" }}
         >
           {listOptions3.map((typeDoc, index) => (
             <MenuItem value={index} key={index}>
@@ -398,153 +401,179 @@ export default function DigitalizarDoc() {
           >
             Pesquisar
           </Button>
+          <Grid
+            item
+            xs={12}
+            sm={4}
+            className="gridItem"
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              width: "900px !important",
+            }}
+            id="selectContainer"
+
+            // style={{ flexDirection: "column" }}
+          >
+            <Select
+              labelId="demo-controlled-open-select-label"
+              open={open}
+              onClose={handleClose}
+              onOpen={handleOpen}
+              value={age}
+              onChange={handleChange}
+              style={{ width: "300px", margin: "10px 10px 10px 0px" }}
+            >
+              {typesDocument.map((typeDoc, index) => (
+                <MenuItem value={index} key={index}>
+                  {typeDoc}
+                </MenuItem>
+              ))}
+            </Select>
+            {types2 && select2()}
+            {types3 && select3()}
+          </Grid>
         </div>
 
         <div className={classes.containerInputs}>
-          <Grid container spacing={2} className="gridContainer">
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              className="gridItem"
-              // style={{ flexDirection: "column" }}
-            >
-              <Select
-                labelId="demo-controlled-open-select-label"
-                // id="demo-controlled-open-select"
-                open={open}
-                onClose={handleClose}
-                onOpen={handleOpen}
-                value={age}
-                onChange={handleChange}
-                style={{ width: "300px", margin: "10px" }}
+          {openInputs && (
+            <>
+              <Grid container spacing={2} className="gridContainer">
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Abertura do Processo"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Encerramento do Processo"
+                    variant="outlined"
+                    size="small"
+                    fullWidth
+                    className={classes.inputItem}
+                  />
+                </Grid>
+              </Grid>
+
+              <Grid container spacing={2} className="gridContainer">
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Tipo de Ata"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Natureza"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid>
+              </Grid>
+
+              <Grid
+                container
+                spacing={2}
+                className="gridContainer"
+                style={{ flexWrap: "wrap", width: "900px" }}
               >
-                {typesDocument.map((typeDoc, index) => (
-                  <MenuItem value={index} key={index}>
-                    {typeDoc}
-                  </MenuItem>
-                ))}
-              </Select>
-              {types2 && select2()}
-              {types3 && select3()}
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              className="gridItem"
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+                  style={{ minWidth: "416px" }}
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Data da averbação"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+                  style={{ minWidth: "416px" }}
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Livro Letra"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid>
+              </Grid>
 
-              // style={{ flexDirection: "column" }}
-            >
-              <TextField
-                label="Tipo de Ata"
-                variant="outlined"
-                fullWidth
-                size="small"
-                className={classes.inputItem}
-              />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              className="gridItem"
+              <Grid
+                container
+                spacing={2}
+                className="gridContainer"
+                style={{ flexWrap: "wrap", width: "820px" }}
+              >
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+                  style={{ minWidth: "416px" }}
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Folha"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid>
+              </Grid>
+            </>
+          )}
 
-              // style={{ flexDirection: "column" }}
-            >
-              <TextField
-                label="Natureza"
-                variant="outlined"
-                fullWidth
-                size="small"
-                className={classes.inputItem}
-              />
-            </Grid>
-          </Grid>
-          <Grid container spacing={2} className="gridContainer">
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              className="gridItem"
-
-              // style={{ flexDirection: "column" }}
-            >
-              <TextField
-                label="Data da averbação"
-                variant="outlined"
-                fullWidth
-                size="small"
-                className={classes.inputItem}
-              />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              className="gridItem"
-
-              // style={{ flexDirection: "column" }}
-            >
-              <TextField
-                label="Livro Letra"
-                variant="outlined"
-                fullWidth
-                size="small"
-                className={classes.inputItem}
-              />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              className="gridItem"
-
-              // style={{ flexDirection: "column" }}
-            >
-              <TextField
-                label="Folha"
-                variant="outlined"
-                fullWidth
-                size="small"
-                className={classes.inputItem}
-              />
-            </Grid>
-          </Grid>
-          <Grid container spacing={2} className="gridContainer">
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              className="gridItem"
-
-              // style={{ flexDirection: "column" }}
-            >
-              <TextField
-                label="Abertura do Processo"
-                variant="outlined"
-                // fullWidth
-                size="small"
-                className={classes.inputItem}
-              />
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              sm={4}
-              className="gridItem"
-
-              // style={{ flexDirection: "column" }}
-            >
-              <TextField
-                label="Encerramento do Processo"
-                variant="outlined"
-                size="small"
-                // fullWidth
-                className={classes.inputItem}
-              />
-            </Grid>
-          </Grid>
           <div className={classes.btnInputs}>
             <Button
               variant="contained"
