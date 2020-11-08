@@ -230,9 +230,11 @@ export default function DigitalizarDoc() {
 
   const handleChange = (event) => {
     setAge(event.target.value);
+    setAge2("");
     const index = event.target.value;
     const itemSelecionado = typesDocument[index];
     setitemOldSelected(itemSelecionado);
+    console.log(itemSelecionado);
 
     switch (itemSelecionado) {
       case "Civil":
@@ -258,7 +260,8 @@ export default function DigitalizarDoc() {
   };
   const handleChange2 = (event) => {
     setAge2(event.target.value);
-
+    setAge3("");
+    setListOptions3([]);
     const index = event.target.value;
     const itemSelecionado = listOptions2[index];
     // const itemSelecionado = typesSubGrupo[index];
@@ -276,7 +279,7 @@ export default function DigitalizarDoc() {
         if (itemOldSelected == "Notas") {
           setListOptions3(typesSubGrupoNotasProces);
         } else {
-          setListOptions3(typesSubGrupoIndexCivilLivro);
+          setListOptions3(typesSubGrupoIndexNotasLivro);
         }
         break;
 
@@ -344,6 +347,7 @@ export default function DigitalizarDoc() {
           value={age2}
           onChange={handleChange2}
           style={{ width: "300px", margin: "10px 10px 10px 0px" }}
+          id="select2"
         >
           {listOptions2.map((typeDoc, index) => (
             <MenuItem value={index} key={index}>

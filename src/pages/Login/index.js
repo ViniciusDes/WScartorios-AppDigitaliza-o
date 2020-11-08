@@ -148,7 +148,7 @@ export default function Login() {
               </div>
 
               <a href="#">Esqueceu sua senha </a>
-              <Link to={`TopBar`}>Acesso</Link>
+              <Link to={`/main`}>Acesso</Link>
             </div>
           </Grid>
         </Grid>

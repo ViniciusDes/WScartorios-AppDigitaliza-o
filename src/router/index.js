@@ -9,7 +9,7 @@ import DigitalizarDoc from "../pages/DigitalizarDoc/index";
 const Routes = () => (
   <Switch>
     <Route exact path="/" component={Login} />
-    <Route path="/TopBar/" component={Main} />
+    <Route path="/main" component={Main} />
     <Route path="/PesquisarDocsDig/" component={PesquisarDocsDig} />
     <Route path="/PageDigitalizar/" component={DigitalizarDoc} />
   </Switch>
