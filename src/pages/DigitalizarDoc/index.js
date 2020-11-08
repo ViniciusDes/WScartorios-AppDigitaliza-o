@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     flexWrap: "wrap",
-    padding: "10px",
+    // padding: "10px",
     margin: "0 auto",
-    width: "80%",
+    width: "70%",
   },
   btns: {
     background: "#050505",
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     // border: "1px solid black",
     margin: "20px auto",
     flexWrap: "wrap",
-    width: "80%",
+    width: "70%",
   },
   inputItem: {
     padding: "10px",
@@ -42,14 +42,14 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
   },
   btnInputs: {
-    marginLeft: "10px",
+    // marginLeft: "10px",
     color: "#ffffff",
-    margin: "5px",
+    margin: "5px 5px 5px 0",
   },
   btnAdcionar: {
     background: "#37E33F",
     color: "#ffffff",
-    margin: "5px",
+    margin: "3px",
   },
   btnEnviaForm: {
     background: "#0086f8",
@@ -64,10 +64,11 @@ const useStyles = makeStyles((theme) => ({
   digitalization: {
     marginTop: "20px",
     display: "inline-grid",
-    width: "100%",
+    width: "90%",
   },
   gridItem: {
     flexWrap: "wrap",
+    padding: "0",
   },
 }));
 
@@ -394,10 +395,10 @@ export default function DigitalizarDoc() {
             size="small"
           />
           <Button
-            id="teste"
             variant="contained"
             component="span"
             className={classes.btns}
+            id="btnSearch"
           >
             Pesquisar
           </Button>
@@ -512,14 +513,14 @@ export default function DigitalizarDoc() {
                 container
                 spacing={2}
                 className="gridContainer"
-                style={{ flexWrap: "wrap", width: "900px" }}
+                style={{ flexWrap: "wrap" }}
               >
                 <Grid
                   item
                   xs={12}
                   sm={4}
                   className="gridItem"
-                  style={{ minWidth: "416px" }}
+                  // style={{ minWidth: "416px" }}
                   // style={{ flexDirection: "column" }}
                 >
                   <TextField
@@ -535,7 +536,7 @@ export default function DigitalizarDoc() {
                   xs={12}
                   sm={4}
                   className="gridItem"
-                  style={{ minWidth: "416px" }}
+                  // style={{ minWidth: "416px" }}
                   // style={{ flexDirection: "column" }}
                 >
                   <TextField
@@ -552,14 +553,14 @@ export default function DigitalizarDoc() {
                 container
                 spacing={2}
                 className="gridContainer"
-                style={{ flexWrap: "wrap", width: "820px" }}
+                style={{ flexWrap: "wrap" }}
               >
                 <Grid
                   item
                   xs={12}
                   sm={4}
                   className="gridItem"
-                  style={{ minWidth: "416px" }}
+                  // style={{ minWidth: "416px" }}
                   // style={{ flexDirection: "column" }}
                 >
                   <TextField
@@ -599,7 +600,7 @@ export default function DigitalizarDoc() {
           </div>
           <div className={classes.digitalization}>
             <div
-              style={{ borderBottom: "1px solid #0086f8" }}
+              style={{ borderBottom: "1px solid #0086f8", width: "100%" }}
               className={classes.digitalization}
             >
               <h3>ESCANEAMENTO</h3>
