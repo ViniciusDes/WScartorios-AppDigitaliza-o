@@ -387,7 +387,7 @@ export default function DigitalizarDoc() {
       <TopBar />
       <div className={classes.root}>
         <div className={classes.header}>
-          <div className={classes.topBarAux}>
+          <div className={classes.topBarAux} style={{ display: "flex" }}>
             <h1 style={{ fontWeight: "500" }}>Cartório</h1>
             <p style={{ paddingTop: "10px" }}>Digitalização</p>
           </div>
