@@ -231,6 +231,7 @@ export default function DigitalizarDoc() {
   const handleChange = (event) => {
     setAge(event.target.value);
     setAge2("");
+    setAge3("");
     const index = event.target.value;
     const itemSelecionado = typesDocument[index];
     setitemOldSelected(itemSelecionado);
@@ -569,6 +570,23 @@ export default function DigitalizarDoc() {
                 >
                   <TextField
                     label="Folha"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid>
+
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+                  // style={{ minWidth: "416px" }}
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Outros"
                     variant="outlined"
                     fullWidth
                     size="small"

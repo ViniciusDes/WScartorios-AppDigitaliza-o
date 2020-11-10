@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ContainerHeader = styled.div`
   #selectContainer {
     color: red;
+    min-width: 1000px;
     max-width: 1100px !important;
     width: auto !important;
     margin: 10px 0 10px 0;
@@ -19,6 +20,10 @@ export const ContainerHeader = styled.div`
     border-bottom: 1px solid rgb(0 126 255);
   }
 
+  .MuiInput-underline {
+    //ultimo select de opções
+    max-width: 250px;
+  }
   @media (max-width: 450px) {
     #btnSearch {
       margin-left: 0;
@@ -39,7 +44,13 @@ export const ContainerHeader = styled.div`
 
     .MuiInput-underline {
       //ultimo select de opções
-      max-width: 214px;
+      max-width: 220px !important;
+      min-width: 220px !important;
+    }
+
+    #selectContainer {
+      max-width: 200px !important;
+      min-width: 100px !important;
     }
   }
 `;
