@@ -17,10 +17,7 @@ export const TopBar = () => (
       <ul>
         <li>Administração</li>
         <li>Cartório</li>
-        <li>Tarefas</li>
-        <li>Fluxo de trabalho</li>
         <li>Relatórios</li>
-        <li>Sindicato</li>
       </ul>
     </div>
   </ContainerTopbar>

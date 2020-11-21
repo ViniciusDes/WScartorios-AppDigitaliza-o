@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: "wrap",
     // padding: "10px",
     margin: "0 auto",
-    width: "70%",
+    width: "81%",
   },
   btns: {
     background: "#050505",
@@ -32,7 +32,9 @@ const useStyles = makeStyles((theme) => ({
     // border: "1px solid black",
     margin: "20px auto",
     flexWrap: "wrap",
-    width: "70%",
+    width: "90%",
+    display: "flex",
+    justifyContent: "center",
   },
   inputItem: {
     padding: "10px",
@@ -44,12 +46,13 @@ const useStyles = makeStyles((theme) => ({
   btnInputs: {
     // marginLeft: "10px",
     color: "#ffffff",
-    margin: "5px 5px 5px 0",
+    margin: "20px 5px 5px 0",
+    width: "90%",
   },
   btnAdcionar: {
     background: "#37E33F",
     color: "#ffffff",
-    margin: "3px",
+    margin: "2px",
   },
   btnEnviaForm: {
     background: "#0086f8",
@@ -69,6 +72,8 @@ const useStyles = makeStyles((theme) => ({
   gridItem: {
     flexWrap: "wrap",
     padding: "0",
+    display: "grid",
+    gridTemplateColumns: "2fr 2fr 2fr",
   },
 }));
 
@@ -227,6 +232,9 @@ export default function DigitalizarDoc() {
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
+  const [openInputsNomeContraente, setopenInputsNomeContraente] = useState(
+    false
+  );
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -311,6 +319,10 @@ export default function DigitalizarDoc() {
     // document.removeChild(select2);
     setOpenInputs(true);
     setTypes3(true);
+
+    if (event.target.value === "Casamento vencido") {
+      setopenInputsNomeContraente(true);
+    }
   };
 
   const handleClose = () => {
@@ -347,7 +359,11 @@ export default function DigitalizarDoc() {
           onOpen={handleOpen2}
           value={age2}
           onChange={handleChange2}
-          style={{ width: "300px", margin: "10px 10px 10px 0px" }}
+          style={{
+            width: "300px",
+            margin: "10px 10px 10px 0px",
+            marginLeft: "10px",
+          }}
           id="select2"
         >
           {listOptions2.map((typeDoc, index) => (
@@ -370,7 +386,11 @@ export default function DigitalizarDoc() {
           onOpen={handleOpen3}
           value={age3}
           onChange={handleChange3}
-          style={{ width: "300px", margin: "10px 10px 10px 0px" }}
+          style={{
+            width: "300px",
+            margin: "10px 10px 10px 0px",
+            marginLeft: "10px",
+          }}
         >
           {listOptions3.map((typeDoc, index) => (
             <MenuItem value={index} key={index}>
@@ -407,41 +427,44 @@ export default function DigitalizarDoc() {
           >
             Pesquisar
           </Button>
-          <Grid
-            item
-            xs={12}
-            sm={4}
-            className="gridItem"
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              width: "900px !important",
-            }}
-            id="selectContainer"
-
-            // style={{ flexDirection: "column" }}
-          >
-            <Select
-              labelId="demo-controlled-open-select-label"
-              open={open}
-              onClose={handleClose}
-              onOpen={handleOpen}
-              value={age}
-              onChange={handleChange}
-              style={{ width: "300px", margin: "10px 10px 10px 0px" }}
-            >
-              {typesDocument.map((typeDoc, index) => (
-                <MenuItem value={index} key={index}>
-                  {typeDoc}
-                </MenuItem>
-              ))}
-            </Select>
-            {types2 && select2()}
-            {types3 && select3()}
-          </Grid>
+          {/* //iteeeens */}
         </div>
 
         <div className={classes.containerInputs}>
+          <div className="containerSelect">
+            <Grid
+              item
+              xs={12}
+              sm={4}
+              className="gridItem"
+              style={{
+                // display: "flex",
+                flexWrap: "wrap",
+                width: "900px !important",
+              }}
+              id="selectContainer"
+
+              // style={{ flexDirection: "column" }}
+            >
+              <Select
+                labelId="demo-controlled-open-select-label"
+                open={open}
+                onClose={handleClose}
+                onOpen={handleOpen}
+                value={age}
+                onChange={handleChange}
+                style={{ width: "300px", margin: "10px 10px 10px 0px" }}
+              >
+                {typesDocument.map((typeDoc, index) => (
+                  <MenuItem value={index} key={index}>
+                    {typeDoc}
+                  </MenuItem>
+                ))}
+              </Select>
+              {types2 && select2()}
+              {types3 && select3()}
+            </Grid>
+          </div>
           {openInputs && (
             <>
               <Grid container spacing={2} className="gridContainer">
@@ -477,6 +500,22 @@ export default function DigitalizarDoc() {
                     className={classes.inputItem}
                   />
                 </Grid>
+                <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
+                  // style={{ minWidth: "416px" }}
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Data da averbação"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid>
               </Grid>
 
               <Grid container spacing={2} className="gridContainer">
@@ -501,46 +540,6 @@ export default function DigitalizarDoc() {
                   xs={12}
                   sm={4}
                   className="gridItem"
-
-                  // style={{ flexDirection: "column" }}
-                >
-                  <TextField
-                    label="Natureza"
-                    variant="outlined"
-                    fullWidth
-                    size="small"
-                    className={classes.inputItem}
-                  />
-                </Grid>
-              </Grid>
-
-              <Grid
-                container
-                spacing={2}
-                className="gridContainer"
-                style={{ flexWrap: "wrap" }}
-              >
-                <Grid
-                  item
-                  xs={12}
-                  sm={4}
-                  className="gridItem"
-                  // style={{ minWidth: "416px" }}
-                  // style={{ flexDirection: "column" }}
-                >
-                  <TextField
-                    label="Data da averbação"
-                    variant="outlined"
-                    fullWidth
-                    size="small"
-                    className={classes.inputItem}
-                  />
-                </Grid>
-                <Grid
-                  item
-                  xs={12}
-                  sm={4}
-                  className="gridItem"
                   // style={{ minWidth: "416px" }}
                   // style={{ flexDirection: "column" }}
                 >
@@ -552,14 +551,23 @@ export default function DigitalizarDoc() {
                     className={classes.inputItem}
                   />
                 </Grid>
-              </Grid>
+                {/* <Grid
+                  item
+                  xs={12}
+                  sm={4}
+                  className="gridItem"
 
-              <Grid
-                container
-                spacing={2}
-                className="gridContainer"
-                style={{ flexWrap: "wrap" }}
-              >
+                  // style={{ flexDirection: "column" }}
+                >
+                  <TextField
+                    label="Natureza"
+                    variant="outlined"
+                    fullWidth
+                    size="small"
+                    className={classes.inputItem}
+                  />
+                </Grid> */}
+
                 <Grid
                   item
                   xs={12}
@@ -576,7 +584,58 @@ export default function DigitalizarDoc() {
                     className={classes.inputItem}
                   />
                 </Grid>
+              </Grid>
 
+              <Grid
+                container
+                spacing={2}
+                className="gridContainer"
+                style={{ flexWrap: "wrap" }}
+              >
+                {setopenInputsNomeContraente && (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    className="gridItem"
+
+                    // style={{ flexDirection: "column" }}
+                  >
+                    <TextField
+                      label="Nome Primeiro Contraente"
+                      variant="outlined"
+                      fullWidth
+                      size="small"
+                      className={classes.inputItem}
+                    />
+                  </Grid>
+                )}
+
+                {setopenInputsNomeContraente && (
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    className="gridItem"
+
+                    // style={{ flexDirection: "column" }}
+                  >
+                    <TextField
+                      label="Nome Segundo Contraente"
+                      variant="outlined"
+                      fullWidth
+                      size="small"
+                      className={classes.inputItem}
+                    />
+                  </Grid>
+                )}
+              </Grid>
+              <Grid
+                container
+                spacing={2}
+                className="gridContainer"
+                style={{ flexWrap: "wrap" }}
+              >
                 <Grid
                   item
                   xs={12}
@@ -584,15 +643,7 @@ export default function DigitalizarDoc() {
                   className="gridItem"
                   // style={{ minWidth: "416px" }}
                   // style={{ flexDirection: "column" }}
-                >
-                  <TextField
-                    label="Outros"
-                    variant="outlined"
-                    fullWidth
-                    size="small"
-                    className={classes.inputItem}
-                  />
-                </Grid>
+                ></Grid>
               </Grid>
             </>
           )}

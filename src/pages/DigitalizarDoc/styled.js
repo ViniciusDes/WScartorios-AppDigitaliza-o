@@ -3,12 +3,19 @@ import styled from "styled-components";
 export const ContainerHeader = styled.div`
   #selectContainer {
     color: red;
-    min-width: 1000px;
-    max-width: 1100px !important;
+    min-width: 40%;
+    /* max-width: 1100px !important; */
     width: auto !important;
     margin: 10px 0 10px 0;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
   }
-
+  .containerSelect {
+    width: 90%;
+  }
+  .gridContainer {
+    width: 91.4%;
+  }
   .gridItem {
     padding: 0 !important;
   }
@@ -44,13 +51,35 @@ export const ContainerHeader = styled.div`
 
     .MuiInput-underline {
       //ultimo select de opções
-      max-width: 220px !important;
-      min-width: 220px !important;
+      /* max-width: 220px !important;
+      min-width: 220px !important; */
     }
 
     #selectContainer {
-      max-width: 200px !important;
+      /* max-width: 200px !important; */
       min-width: 100px !important;
+
+      display: flex;
+      /* margin: 0; */
+    }
+
+    .MuiInput-underline {
+      //select
+      margin: 10px 0 0 0 !important;
+      width: 93%;
+    }
+
+    .MuiInput-underline:before {
+      //linha do select
+      width: 93%;
+    }
+    .MuiGrid-container {
+      //container geral dos inputs
+      width: 100%;
+    }
+
+    .makeStyles-digitalization-11 {
+      width: 100%; //container geral dos botes de digitalizar ou salvar
     }
   }
 `;
