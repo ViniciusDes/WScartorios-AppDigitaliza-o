@@ -74,6 +74,7 @@ const useStyles = makeStyles((theme) => ({
     padding: "0",
     display: "grid",
     gridTemplateColumns: "2fr 2fr 2fr",
+    margin: "3px",
   },
 }));
 
@@ -473,8 +474,7 @@ export default function DigitalizarDoc() {
                   xs={12}
                   sm={4}
                   className="gridItem"
-
-                  // style={{ flexDirection: "column" }}
+                  style={{ margin: "0 0 15px 0" }}
                 >
                   <TextField
                     label="Abertura do Processo"
@@ -524,11 +524,10 @@ export default function DigitalizarDoc() {
                   xs={12}
                   sm={4}
                   className="gridItem"
-
-                  // style={{ flexDirection: "column" }}
+                  style={{ margin: "0 0 15px 0" }}
                 >
                   <TextField
-                    label="Tipo de Ata"
+                    label="Tipo de Ato"
                     variant="outlined"
                     fullWidth
                     size="small"
@@ -551,23 +550,6 @@ export default function DigitalizarDoc() {
                     className={classes.inputItem}
                   />
                 </Grid>
-                {/* <Grid
-                  item
-                  xs={12}
-                  sm={4}
-                  className="gridItem"
-
-                  // style={{ flexDirection: "column" }}
-                >
-                  <TextField
-                    label="Natureza"
-                    variant="outlined"
-                    fullWidth
-                    size="small"
-                    className={classes.inputItem}
-                  />
-                </Grid> */}
-
                 <Grid
                   item
                   xs={12}

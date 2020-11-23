@@ -11,7 +11,8 @@ export const ContainerHeader = styled.div`
     grid-template-columns: 2fr 2fr 2fr;
   }
   .containerSelect {
-    width: 90%;
+    width: 91.3%;
+    padding-left: 10px;
   }
   .gridContainer {
     width: 91.4%;
@@ -48,13 +49,18 @@ export const ContainerHeader = styled.div`
       margin: 5px 0 0 0;
       width: 100%;
     }
-
+    .containerSelect {
+      width: 100%;
+      padding-left: 10px;
+    }
     .MuiInput-underline {
       //ultimo select de opções
-      /* max-width: 220px !important;
-      min-width: 220px !important; */
+      max-width: 300px !important;
+      /*min-width: 220px !important; */
     }
-
+    .makeStyles-btnInputs-7 {
+      width: 100% !important;
+    }
     #selectContainer {
       /* max-width: 200px !important; */
       min-width: 100px !important;
@@ -63,19 +69,25 @@ export const ContainerHeader = styled.div`
       /* margin: 0; */
     }
 
+    .gridItem {
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
     .MuiInput-underline {
       //select
       margin: 10px 0 0 0 !important;
-      width: 93%;
+      width: 100%;
     }
 
     .MuiInput-underline:before {
       //linha do select
-      width: 93%;
+      width: 100%;
     }
     .MuiGrid-container {
       //container geral dos inputs
       width: 100%;
+      margin: 0 !important;
     }
 
     .makeStyles-digitalization-11 {

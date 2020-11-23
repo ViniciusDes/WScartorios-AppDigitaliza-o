@@ -89,7 +89,7 @@ export default function PesquisarDocsDig() {
                   <Grid item xs={12} sm={12} className="gridItem">
                     <div className="inputItem">
                       <TextField
-                        label="Ata"
+                        label="Ato"
                         variant="outlined"
                         fullWidth
                         size="small"
@@ -123,7 +123,7 @@ export default function PesquisarDocsDig() {
                   <Grid item xs={12} sm={12} className="gridItem">
                     <div className="inputItem">
                       <TextField
-                        label="Tipo de Ata"
+                        label="Tipo de Ato"
                         variant="outlined"
                         fullWidth
                         size="small"
