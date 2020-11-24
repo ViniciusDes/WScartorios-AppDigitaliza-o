@@ -9,7 +9,11 @@ export const ContainerGrid = styled.div`
     width: 20px;
     height: 20px;
 
-    margin: 5px;
+    margin: 10px;
+  }
+
+  img:hover {
+    cursor: pointer;
   }
   @media (max-width: 450px) {
     width: 100%;
