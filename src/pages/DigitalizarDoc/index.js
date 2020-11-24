@@ -8,6 +8,7 @@ import { SelectDocs as MUISelectDocs } from "../../components/select/SelectDoc";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -317,12 +318,12 @@ export default function DigitalizarDoc() {
   };
   const handleChange3 = (event) => {
     setAge3(event.target.value);
-    // document.removeChild(select2);
     setOpenInputs(true);
     setTypes3(true);
-
-    if (event.target.value === "Casamento vencido") {
+    if (event.target.value === 5) {
       setopenInputsNomeContraente(true);
+    } else {
+      setopenInputsNomeContraente(false);
     }
   };
 
@@ -411,7 +412,13 @@ export default function DigitalizarDoc() {
         <div className={classes.header}>
           <div className={classes.topBarAux} style={{ display: "flex" }}>
             <h1 style={{ fontWeight: "500" }}>Cartório</h1>
-            <p style={{ paddingTop: "10px" }}>Digitalização</p>
+            <a
+              style={{ paddingTop: "10px" }}
+              onClick={() => window.location.reload()}
+              href=""
+            >
+              Digitalização
+            </a>
           </div>
 
           <TextField
@@ -574,7 +581,7 @@ export default function DigitalizarDoc() {
                 className="gridContainer"
                 style={{ flexWrap: "wrap" }}
               >
-                {setopenInputsNomeContraente && (
+                {openInputsNomeContraente && (
                   <Grid
                     item
                     xs={12}
@@ -593,7 +600,7 @@ export default function DigitalizarDoc() {
                   </Grid>
                 )}
 
-                {setopenInputsNomeContraente && (
+                {openInputsNomeContraente && (
                   <Grid
                     item
                     xs={12}
