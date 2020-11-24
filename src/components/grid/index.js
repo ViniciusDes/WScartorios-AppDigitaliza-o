@@ -8,6 +8,9 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import { ContainerGrid } from "./styles";
+import iconPencil from "../../images/iconPencil.jpeg";
+import iconDownload from "../../images/iconDownload.jpeg";
+import iconSearch from "../../images/iconSearch.jpeg";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
@@ -59,6 +62,9 @@ export default function CustomizedTables() {
               <StyledTableCell align="right">Data</StyledTableCell>
               <StyledTableCell align="right">Livro</StyledTableCell>
               <StyledTableCell align="right">Termo</StyledTableCell>
+              <StyledTableCell align="right">
+                Baixar/Visualizar/Editar
+              </StyledTableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -71,6 +77,11 @@ export default function CustomizedTables() {
                 <StyledTableCell align="right">{row.data}</StyledTableCell>
                 <StyledTableCell align="right">{row.termo}</StyledTableCell>
                 <StyledTableCell align="right">{row.livro}</StyledTableCell>
+                <StyledTableCell align="right" style={{ width: "20px" }}>
+                  {<img src={iconDownload} />}
+                  {<img src={iconSearch} />}
+                  {<img src={iconPencil} />}
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>

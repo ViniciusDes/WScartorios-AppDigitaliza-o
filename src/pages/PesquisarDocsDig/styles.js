@@ -67,8 +67,11 @@ export const ContainerDigitalizar = styled.div`
 export const Header = styled.div`
   color: #0086f8;
   border-bottom: 1px solid #7e7e7e;
-  p {
+  a {
     font-weight: bold;
     padding: 20px 0 20px 20px;
+  }
+  a:hover {
+    cursor: pointer;
   }
 `;

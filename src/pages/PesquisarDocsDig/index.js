@@ -27,7 +27,7 @@ export default function PesquisarDocsDig() {
 
       <div className="containerItens">
         <Header>
-          <p>FILTROS</p>
+          <a onClick={() => window.location.reload()}>FILTROS</a>
         </Header>
         <div className="inputsSearch">
           <Grid container spacing={2} className="gridContainer">
