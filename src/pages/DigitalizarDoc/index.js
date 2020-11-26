@@ -243,13 +243,19 @@ export default function DigitalizarDoc() {
   const [openInputsNomeContraente, setopenInputsNomeContraente] = useState(
     false
   );
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
+  const [date, setDate] = useState();
+  const [startDate, setStartDate] = useState(false);
 
-  const [selectedDate, setSelectedDate] = React.useState(
-    new Date("2014-08-18T21:11:54")
-  );
+  useEffect(() => {
+    updateDate();
+  }, []);
+
+  const updateDate = () => {
+    const now = new Date();
+    let data = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+    setDate(data);
+    setStartDate(true);
+  };
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -532,7 +538,7 @@ export default function DigitalizarDoc() {
                     id="date"
                     label="Data"
                     type="date"
-                    defaultValue="2017-05-12"
+                    defaultValue={date}
                     className={classes.textField}
                     InputLabelProps={{
                       shrink: true,
