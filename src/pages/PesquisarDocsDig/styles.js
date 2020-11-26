@@ -15,6 +15,9 @@ export const ContainerDigitalizar = styled.div`
     margin-bottom: 20px;
   }
 
+  .MuiTextField-root {
+    width: 99%;
+  }
   #containerAll {
     margin-top: 50px;
   }
@@ -51,6 +54,9 @@ export const ContainerDigitalizar = styled.div`
         }
       }
     }
+  }
+  .MuiInput-formControl {
+    margin-top: 8px;
   }
 
   @media (max-width: 450px) {

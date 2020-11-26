@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { TopBar } from "../../components/TopBar/index";
 import { ContainerDigitalizar, Header } from "./styles";
 import { makeStyles } from "@material-ui/core/styles";
@@ -18,8 +18,22 @@ const useStyles = makeStyles((theme) => ({
     height: "200px",
   },
 }));
+
 export default function PesquisarDocsDig() {
   const classes = useStyles();
+  const [date, setDate] = useState();
+  const [startDate, setStartDate] = useState(false);
+
+  useEffect(() => {
+    updateDate();
+  }, []);
+
+  const updateDate = () => {
+    const now = new Date();
+    let data = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+    setDate(data);
+    setStartDate(true);
+  };
 
   return (
     <ContainerDigitalizar>
@@ -56,12 +70,19 @@ export default function PesquisarDocsDig() {
                 </Grid> */}
                   <Grid item xs={12} sm={12} className="gridItem">
                     <div className="inputItem">
-                      <TextField
-                        label="Data"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
+                      {startDate && (
+                        <TextField
+                          id="date"
+                          label="Data"
+                          type="date"
+                          defaultValue={date}
+                          className={classes.textField}
+                          InputLabelProps={{
+                            shrink: true,
+                          }}
+                          // style={{ paddingLeft: "10px", width: "97%" }}
+                        />
+                      )}
                     </div>
                   </Grid>
                   <Grid item xs={12} sm={12} className="gridItem">

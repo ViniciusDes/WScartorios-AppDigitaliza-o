@@ -20,6 +20,9 @@ export const ContainerHeader = styled.div`
   .gridItem {
     padding: 0 !important;
   }
+  #date-label {
+    margin-left: 10px;
+  }
   .MuiOutlinedInput-notchedOutline {
     //cor das bordas dos inputs geral
     border-color: rgb(0 126 255);
@@ -28,9 +31,12 @@ export const ContainerHeader = styled.div`
     border-bottom: 1px solid rgb(0 126 255);
   }
 
-  .MuiInput-underline {
+  .MuiTextField-root {
     //ultimo select de opções
-    max-width: 250px;
+    /* width: 100% !important; */
+  }
+  .caKhUY .MuiInput-underline {
+    max-width: 0 !important;
   }
   @media (max-width: 450px) {
     #btnSearch {
@@ -53,6 +59,7 @@ export const ContainerHeader = styled.div`
       width: 100%;
       padding-left: 10px;
     }
+
     .MuiInput-underline {
       //ultimo select de opções
       max-width: 300px !important;
@@ -68,12 +75,16 @@ export const ContainerHeader = styled.div`
       display: flex;
       /* margin: 0; */
     }
-
+    #date-label {
+      margin-left: 10px;
+    }
     .gridItem {
       padding: 0 !important;
       margin: 0 !important;
     }
-
+    .caKhUY .MuiInput-underline {
+      max-width: 0 !important;
+    }
     .MuiInput-underline {
       //select
       margin: 10px 0 0 0 !important;

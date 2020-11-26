@@ -4,11 +4,17 @@ import TopBar from "../../components/TopBar/index";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { ContainerHeader } from "./styled";
-import { SelectDocs as MUISelectDocs } from "../../components/select/SelectDoc";
 import Grid from "@material-ui/core/Grid";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
 import { Link } from "react-router-dom";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardTimePicker,
+  KeyboardDatePicker,
+} from "@material-ui/pickers";
+import DateFnsUtils from "@date-io/date-fns";
+import MomentUtils from "@date-io/moment";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -236,6 +242,13 @@ export default function DigitalizarDoc() {
   const [open3, setOpen3] = useState(false);
   const [openInputsNomeContraente, setopenInputsNomeContraente] = useState(
     false
+  );
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+  };
+
+  const [selectedDate, setSelectedDate] = React.useState(
+    new Date("2014-08-18T21:11:54")
   );
 
   const handleChange = (event) => {
@@ -516,11 +529,15 @@ export default function DigitalizarDoc() {
                   // style={{ flexDirection: "column" }}
                 >
                   <TextField
-                    label="Data da averbação"
-                    variant="outlined"
-                    fullWidth
-                    size="small"
-                    className={classes.inputItem}
+                    id="date"
+                    label="Data"
+                    type="date"
+                    defaultValue="2017-05-12"
+                    className={classes.textField}
+                    InputLabelProps={{
+                      shrink: true,
+                    }}
+                    style={{ paddingLeft: "10px", width: "97%" }}
                   />
                 </Grid>
               </Grid>
