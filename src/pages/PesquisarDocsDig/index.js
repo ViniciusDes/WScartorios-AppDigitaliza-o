@@ -48,16 +48,6 @@ export default function PesquisarDocsDig() {
             <div id="containerAll">
               <div id="containerInputs">
                 <div style={{ display: "block" }}>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Termo/Parte"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
                   {/* <Grid item xs={12} sm={12} className="gridItem">
                   <div className="inputItem">
                     <TextField
@@ -117,16 +107,6 @@ export default function PesquisarDocsDig() {
                       />
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Ficha"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
                 </div>
 
                 <div style={{ display: "block" }}>
@@ -151,40 +131,8 @@ export default function PesquisarDocsDig() {
                       />
                     </div>
                   </Grid>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Origem"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
-                  {/* <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        
-                        label="Suporte"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid> */}
                 </div>
                 <div style={{ display: "block" }}>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Cartório"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
-
                   <Grid item xs={12} sm={12} className="gridItem">
                     <div className="inputItem">
                       <TextField
@@ -195,37 +143,62 @@ export default function PesquisarDocsDig() {
                       />
                     </div>
                   </Grid>
+
                   <Grid item xs={12} sm={12} className="gridItem">
                     <div className="inputItem">
                       <TextField
-                        label="Protocolo Escriba Casamento"
+                        label="Ficha"
                         variant="outlined"
                         fullWidth
                         size="small"
                       />
                     </div>
                   </Grid>
-                  {/* <Grid item xs={12} sm={12} className="gridItem">
-                  <div className="inputItem">
-                    <TextField
-                      
-                      label="Termo/Parte"
-                      variant="outlined"
-                      fullWidth
-                    />
-                  </div>
-                </Grid>
-                <Grid item xs={12} sm={12} className="gridItem">
-                  <div className="inputItem">
-                    <TextField
-                      
-                      label="Termo/Parte"
-                      variant="outlined"
-                      fullWidth
-                    />
-                  </div>
-                </Grid> */}
                 </div>
+                <Grid
+                  container
+                  spacing={2}
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    width: "100%",
+                    paddingLeft: "3px",
+                  }}
+                  className="gridContainer"
+                >
+                  <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    style={{ maxWidth: "47.5%", margin: "0" }}
+                    className="gridItem"
+                  >
+                    <div style={{ width: "100%" }}>
+                      <TextField
+                        label="Origem"
+                        variant="outlined"
+                        size="small"
+                        fullWidth
+                      />
+                    </div>
+                  </Grid>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={12}
+                    style={{ maxWidth: "47.5%", margin: "0" }}
+                    className="gridItem"
+                  >
+                    <div style={{ width: "100%" }}>
+                      <TextField
+                        label="Protocolo geral"
+                        variant="outlined"
+                        fullWidth
+                        size="small"
+                      />
+                    </div>
+                  </Grid>
+                </Grid>
               </div>
               <div id="bottomBar">
                 <CustomizedTables />

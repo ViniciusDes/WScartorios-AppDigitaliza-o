@@ -30,16 +30,86 @@ const StyledTableRow = withStyles((theme) => ({
   },
 }))(TableRow);
 
-function createData(id, data, livro, folhaCnpj, termo) {
-  return { id, data, livro, folhaCnpj, termo };
+function createData(
+  id,
+  data,
+  livro,
+  folhaCnpj,
+  termo,
+  ato,
+  tipodeAto,
+  atividade,
+  diligencia
+) {
+  return {
+    id,
+    data,
+    livro,
+    folhaCnpj,
+    termo,
+    ato,
+    tipodeAto,
+    atividade,
+    diligencia,
+  };
 }
 
 const rows = [
-  createData(1, "12/04/2020", 22, "706.520.022-19", 11),
-  createData(2, "21/04/2020", 22, "706.520.022-19", 11),
-  createData(3, "24/07/2020", 22, "706.520.022-19", 11),
-  createData(4, "31/01/2020", 22, "706.520.022-19", 11),
-  createData(5, "12/06/2020", 22, "706.520.022-19", 11),
+  createData(
+    1,
+    "12/04/2020",
+    22,
+    "706.520.022-19",
+    11,
+    "Nascimento",
+    "Atos Publicos",
+    "Livros",
+    "Civil"
+  ),
+  createData(
+    1,
+    "12/04/2020",
+    22,
+    "706.520.022-19",
+    11,
+    "Divorcio",
+    "Atos Publicos",
+    "Processo",
+    "Notas"
+  ),
+  createData(
+    1,
+    "12/04/2020",
+    22,
+    "706.520.022-19",
+    11,
+    "Nascimento",
+    "Atos Publicos",
+    "Livros",
+    "Civil"
+  ),
+  createData(
+    1,
+    "12/04/2020",
+    22,
+    "706.520.022-19",
+    11,
+    "Divorcio",
+    "Atos Publicos",
+    "Processo",
+    "Notas"
+  ),
+  createData(
+    1,
+    "12/04/2020",
+    22,
+    "706.520.022-19",
+    11,
+    "Nascimento",
+    "Atos Publicos",
+    "Livros",
+    "Civil"
+  ),
 ];
 
 const useStyles = makeStyles({
@@ -62,6 +132,10 @@ export default function CustomizedTables() {
               <StyledTableCell align="right">Data</StyledTableCell>
               <StyledTableCell align="right">Livro</StyledTableCell>
               <StyledTableCell align="right">Termo</StyledTableCell>
+              <StyledTableCell align="right">Ato</StyledTableCell>
+              <StyledTableCell align="right">Tipo de Ato</StyledTableCell>
+              <StyledTableCell align="right">Atividade</StyledTableCell>
+              <StyledTableCell align="right">Diligência</StyledTableCell>
               <StyledTableCell align="right">
                 Baixar/Visualizar/Editar
               </StyledTableCell>
@@ -77,6 +151,12 @@ export default function CustomizedTables() {
                 <StyledTableCell align="right">{row.data}</StyledTableCell>
                 <StyledTableCell align="right">{row.termo}</StyledTableCell>
                 <StyledTableCell align="right">{row.livro}</StyledTableCell>
+                <StyledTableCell align="right">{row.ato}</StyledTableCell>
+                <StyledTableCell align="right">{row.tipodeAto}</StyledTableCell>
+                <StyledTableCell align="right">{row.atividade}</StyledTableCell>
+                <StyledTableCell align="right">
+                  {row.diligencia}
+                </StyledTableCell>
                 <StyledTableCell align="right" style={{ width: "20px" }}>
                   {<img src={iconDownload} />}
                   {<img src={iconSearch} />}
