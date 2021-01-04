@@ -46,159 +46,151 @@ export default function PesquisarDocsDig() {
         <div className="inputsSearch">
           <Grid container spacing={2} className="gridContainer">
             <div id="containerAll">
-              <div id="containerInputs">
-                <div style={{ display: "block" }}>
-                  {/* <Grid item xs={12} sm={12} className="gridItem">
-                  <div className="inputItem">
-                    <TextField
-                      
-                      label="Pesquisa Geral"
-                      variant="outlined"
-                      fullWidth
-                    />
-                  </div>
-                </Grid> */}
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      {startDate && (
+              <div className="contentTest">
+                <div id="containerInputs">
+                  <div style={{ display: "flex" }}>
+                    <Grid item xs={12} sm={12} className="gridItem">
+                      <div className="inputItem">
+                        {startDate && (
+                          <TextField
+                            id="date"
+                            label="Data"
+                            type="date"
+                            defaultValue={date}
+                            className={classes.textField}
+                            InputLabelProps={{
+                              shrink: true,
+                            }}
+                            // style={{ paddingLeft: "10px", width: "97%" }}
+                          />
+                        )}
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} sm={12} className="gridItem">
+                      <div className="inputItem">
                         <TextField
-                          id="date"
-                          label="Data"
-                          type="date"
-                          defaultValue={date}
-                          className={classes.textField}
-                          InputLabelProps={{
-                            shrink: true,
-                          }}
-                          // style={{ paddingLeft: "10px", width: "97%" }}
+                          label="Termo/Parte"
+                          variant="outlined"
+                          fullWidth
+                          size="small"
                         />
-                      )}
-                    </div>
-                  </Grid>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Termo/Parte"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
-                </div>
-                <div style={{ display: "block" }}>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Livro"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Ato"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
-                </div>
+                      </div>
+                    </Grid>
+                  </div>
+                  <div style={{ display: "flex" }}>
+                    <Grid item xs={12} sm={12} className="gridItem">
+                      <div className="inputItem">
+                        <TextField
+                          label="Livro"
+                          variant="outlined"
+                          fullWidth
+                          size="small"
+                        />
+                      </div>
+                    </Grid>
+                    <Grid item xs={12} sm={12} className="gridItem">
+                      <div className="inputItem">
+                        <TextField
+                          label="Ato"
+                          variant="outlined"
+                          fullWidth
+                          size="small"
+                        />
+                      </div>
+                    </Grid>
+                  </div>
 
-                <div style={{ display: "block" }}>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Protocolo/oficio"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
+                  <div style={{ display: "flex" }}>
+                    <Grid item xs={12} sm={12} className="gridItem">
+                      <div className="inputItem">
+                        <TextField
+                          label="Protocolo/oficio"
+                          variant="outlined"
+                          fullWidth
+                          size="small"
+                        />
+                      </div>
+                    </Grid>
 
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Tipo de Ato"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
-                </div>
-                <div style={{ display: "block" }}>
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Folha/CNPJ/CPF"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
+                    <Grid item xs={12} sm={12} className="gridItem">
+                      <div className="inputItem">
+                        <TextField
+                          label="Tipo de Ato"
+                          variant="outlined"
+                          fullWidth
+                          size="small"
+                        />
+                      </div>
+                    </Grid>
+                  </div>
+                  <div style={{ display: "flex" }}>
+                    <Grid item xs={12} sm={12} className="gridItem">
+                      <div className="inputItem">
+                        <TextField
+                          label="Folha/CNPJ/CPF"
+                          variant="outlined"
+                          fullWidth
+                          size="small"
+                        />
+                      </div>
+                    </Grid>
 
-                  <Grid item xs={12} sm={12} className="gridItem">
-                    <div className="inputItem">
-                      <TextField
-                        label="Ficha"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
-                </div>
-                <Grid
-                  container
-                  spacing={2}
-                  style={{
-                    display: "flex",
-                    justifyContent: "center",
-                    width: "100%",
-                    paddingLeft: "3px",
-                  }}
-                  className="gridContainer"
-                >
+                    <Grid item xs={12} sm={12} className="gridItem">
+                      <div className="inputItem">
+                        <TextField
+                          label="Ficha"
+                          variant="outlined"
+                          fullWidth
+                          size="small"
+                        />
+                      </div>
+                    </Grid>
+                  </div>
                   <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    style={{ maxWidth: "49%", margin: "0" }}
-                    className="gridItem"
+                    container
+                    spacing={2}
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      width: "100%",
+                      paddingLeft: "3px",
+                    }}
+                    className="gridContainer"
                   >
-                    <div style={{ width: "100%" }}>
-                      <TextField
-                        label="Origem"
-                        variant="outlined"
-                        size="small"
-                        fullWidth
-                      />
-                    </div>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={12}
+                      style={{ maxWidth: "600px", margin: "0" }}
+                      className="gridItem"
+                    >
+                      <div style={{ width: "100%" }}>
+                        <TextField
+                          label="Origem"
+                          variant="outlined"
+                          size="small"
+                          fullWidth
+                        />
+                      </div>
+                    </Grid>
+                    <Grid
+                      item
+                      xs={12}
+                      sm={12}
+                      style={{ maxWidth: "600px", margin: "0" }}
+                      className="gridItem"
+                    >
+                      <div style={{ width: "100%" }}>
+                        <TextField
+                          label="Protocolo geral"
+                          variant="outlined"
+                          fullWidth
+                          size="small"
+                        />
+                      </div>
+                    </Grid>
                   </Grid>
-                  <Grid
-                    item
-                    xs={12}
-                    sm={12}
-                    style={{ maxWidth: "49%", margin: "0" }}
-                    className="gridItem"
-                  >
-                    <div style={{ width: "100%" }}>
-                      <TextField
-                        label="Protocolo geral"
-                        variant="outlined"
-                        fullWidth
-                        size="small"
-                      />
-                    </div>
-                  </Grid>
-                </Grid>
+                </div>
               </div>
               <div id="bottomBar">
                 <CustomizedTables />
