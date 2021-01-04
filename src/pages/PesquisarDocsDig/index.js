@@ -170,7 +170,7 @@ export default function PesquisarDocsDig() {
                     item
                     xs={12}
                     sm={12}
-                    style={{ maxWidth: "47.5%", margin: "0" }}
+                    style={{ maxWidth: "49%", margin: "0" }}
                     className="gridItem"
                   >
                     <div style={{ width: "100%" }}>
@@ -186,7 +186,7 @@ export default function PesquisarDocsDig() {
                     item
                     xs={12}
                     sm={12}
-                    style={{ maxWidth: "47.5%", margin: "0" }}
+                    style={{ maxWidth: "49%", margin: "0" }}
                     className="gridItem"
                   >
                     <div style={{ width: "100%" }}>
