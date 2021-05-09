@@ -1,6 +1,6 @@
 import React from "react";
 import imgCartorioDigital from "../../images/CartorioDigital.jpg";
-import { Container, Menu, Header, Body } from "./styles";
+import { Container, Menu, Header, Body, ContentExit } from "./styles";
 import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 
@@ -17,9 +17,9 @@ export default function Main() {
             <Menu className="menuItems">
               <Header>
                 <h1>Cartório Digital WS</h1>
-              </Header>
-
-              <Body>
+              </Header> 
+  
+              <Body>  
                 <ul>
                   <li>
                     <Link to={`PageDigitalizar`}>
@@ -34,6 +34,11 @@ export default function Main() {
                 </ul>
               </Body>
             </Menu>
+              <ContentExit style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '5px'}}>
+              <Link to={`/`}>
+                Sair
+              </Link>
+              </ContentExit>
           </div>
         </Grid>
       </Grid>

@@ -13,6 +13,10 @@ export const Container = styled.div`
     width: 100%;
     display: flex;
   }
+  a{
+    text-decoration: none;
+    font-weight: 500; 
+  }
 
   .gridItem {
     padding: 0 !important;
@@ -20,6 +24,13 @@ export const Container = styled.div`
   img {
     height: 100%;
     width: 100%;
+  }
+
+  .containerItens {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   @media (max-width: 450px) {
@@ -47,6 +58,15 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const ContentExit = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  a {
+    font-size: 20px;
+  }
+`
 
 export const Menu = styled.form`
   border: 2px solid #eceeee;
